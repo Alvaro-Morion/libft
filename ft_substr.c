@@ -1,54 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:45:13 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:52:53 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 10:08:30 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 10:15:49 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-static int	ft_size(char const *s1, char const *s2)
+static void	*ft_bzero(void *s, size_t n)
 {
-	int	i;
-	int	size;
+	char	*str;
+	size_t	i;
 
+	str = s;
 	i = 0;
-	size = 0;
-	while (s1[size])
-		size++;
-	while (s2[i])
+	while (i < n)
+	{
+		str[i] = '\0';
 		i++;
-	size = size + i;
-	return (size);
+	}
+	s = str;
+	return (s);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		size;
-	char	*str;
+	size_t	i;
+	char	*substr;
 
-	size = ft_size(s1, s2);
-	str = malloc(sizeof(char) * (size + 1));
-	if (!str)
+	substr = malloc(len + 1);
+	ft_bzero(substr, len + 1);
+	if (!substr)
 		return (0);
 	i = 0;
-	while (s1[i])
+	while (s[start + i] && i < len)
 	{
-		str[i] = s1[i];
+		substr[i] = s[start + i];
 		i++;
 	}
-	size = 0;
-	while (s2[size])
-	{
-		str[i + size] = s2[size];
-		size++;
-	}
-	str[i + size] = '\0';
-	return (str);
+	return (substr);
 }

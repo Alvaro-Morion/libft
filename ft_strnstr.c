@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:41:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 09:35:56 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 09:47:25 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-char	*strdup(const char *s)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		size;
-	int		i;
-	char	*dest;
+	size_t	i;
+	size_t	j;
 
-	size = 0;
-	while (s[size])
-		size++;
-	dest = malloc(sizeof(s) * size);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < size)
+	j = 0;
+	if (!*little)
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		dest[i] = s[i];
+		if (big[i] == little[j])
+		{
+			while (i + j < len && big[i + j] && big[i + j] == little[j]
+				&& little[j])
+				j++;
+			if (!little[j])
+				return ((char *)big + i);
+			j = 0;
+		}
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }

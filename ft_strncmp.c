@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:41:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 09:27:28 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 09:34:52 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-char	*strdup(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		size;
-	int		i;
-	char	*dest;
+	size_t	i;
 
-	size = 0;
-	while (s[size])
-		size++;
-	dest = malloc(sizeof(s) * size);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < size)
-	{
-		dest[i] = s[i];
+	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	}
-	return (dest);
+	return (s1[i] - s2[i]);
 }

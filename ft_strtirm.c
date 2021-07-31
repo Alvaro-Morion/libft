@@ -1,54 +1,64 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtirm.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:45:13 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:52:53 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 09:58:58 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 10:06:52 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-static int	ft_size(char const *s1, char const *s2)
+static int	ft_isinset(const char *set, char c)
 {
 	int	i;
-	int	size;
 
 	i = 0;
-	size = 0;
-	while (s1[size])
-		size++;
-	while (s2[i])
+	while (set[i])
+	{
+		if (set [i] == c)
+			return (1);
 		i++;
-	size = size + i;
-	return (size);
+	}
+	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static int	ft_strlen_mod(char const *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		size;
+	int		n;
 	char	*str;
 
-	size = ft_size(s1, s2);
-	str = malloc(sizeof(char) * (size + 1));
-	if (!str)
-		return (0);
+	size = ft_strlen_mod(s1);
 	i = 0;
-	while (s1[i])
+	while (ft_isinset(set, s1[size - 1]))
+		size--;
+	while (ft_isinset(set, s1[i]))
 	{
-		str[i] = s1[i];
+		size--;
 		i++;
 	}
-	size = 0;
-	while (s2[size])
+	str = malloc(sizeof(char) * (size + 1));
+	n = 0;
+	while (n < size)
 	{
-		str[i + size] = s2[size];
-		size++;
+		str[n] = s1[i + n];
+		n++;
 	}
-	str[i + size] = '\0';
+	str[n] = '\0';
 	return (str);
 }

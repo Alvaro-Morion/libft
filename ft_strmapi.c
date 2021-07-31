@@ -1,54 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:45:13 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:52:53 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 09:14:58 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 09:25:09 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-static int	ft_size(char const *s1, char const *s2)
+static size_t	ft_strlen_mod(const char *s)
 {
-	int	i;
-	int	size;
+	size_t	i;
 
 	i = 0;
-	size = 0;
-	while (s1[size])
-		size++;
-	while (s2[i])
+	while (s[i])
 		i++;
-	size = size + i;
-	return (size);
+	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
+	char	*result;
 	int		i;
-	int		size;
-	char	*str;
 
-	size = ft_size(s1, s2);
-	str = malloc(sizeof(char) * (size + 1));
-	if (!str)
+	result = malloc(sizeof(char) * (ft_strlen_mod(s) + 1));
+	if (!result)
 		return (0);
 	i = 0;
-	while (s1[i])
+	while (s[i])
 	{
-		str[i] = s1[i];
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	size = 0;
-	while (s2[size])
-	{
-		str[i + size] = s2[size];
-		size++;
-	}
-	str[i + size] = '\0';
-	return (str);
+	result[i] = '\0';
+	return (result);
 }

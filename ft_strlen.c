@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:41:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 09:08:28 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 09:12:06 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-char	*strdup(const char *s)
+size_t	ft_strlen(char *str)
 {
-	int		size;
-	int		i;
-	char	*dest;
+	int	i;
 
-	size = 0;
-	while (s[size])
-		size++;
-	dest = malloc(sizeof(s) * size);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < size)
-	{
-		dest[i] = s[i];
+	while (str[i])
 		i++;
-	}
-	return (dest);
+	return (i);
 }

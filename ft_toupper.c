@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:41:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 10:21:47 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 10:24:30 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-
-char	*strdup(const char *s)
+int	ft_toupper(int c)
 {
-	int		size;
-	int		i;
-	char	*dest;
-
-	size = 0;
-	while (s[size])
-		size++;
-	dest = malloc(sizeof(s) * size);
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		dest[i] = s[i];
-		i++;
-	}
-	return (dest);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

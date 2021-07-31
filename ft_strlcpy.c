@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:41:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by amorion-         ###   ########.fr       */
+/*   Created: 2021/07/31 09:06:28 by amorion-          #+#    #+#             */
+/*   Updated: 2021/07/31 09:07:33 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-char	*strdup(const char *s)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int		size;
-	int		i;
-	char	*dest;
+	size_t	i;
+	size_t	c;
 
-	size = 0;
-	while (s[size])
-		size++;
-	dest = malloc(sizeof(s) * size);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < size)
+	c = 0;
+	while (src[c])
+		c++;
+	if (size > 0)
 	{
-		dest[i] = s[i];
-		i++;
+		while (src[i] && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
 	}
-	return (dest);
+	dest[i] = '\0';
+	return (c);
 }
