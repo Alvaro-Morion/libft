@@ -6,7 +6,7 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 10:43:34 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 12:02:01 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 12:28:40 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define LIBFT_H
 # include<stdlib.h>
 # include<unistd.h>
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 int		ft_atoi(char *nptr);

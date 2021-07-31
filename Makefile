@@ -6,7 +6,7 @@
 #    By: amorion- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/31 12:05:34 by amorion-          #+#    #+#              #
-#    Updated: 2021/07/31 12:20:43 by amorion-         ###   ########.fr        #
+#    Updated: 2021/07/31 12:23:39 by amorion-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,6 @@ all: ${OBJS}
 	ranlib ${NAME}
 clean:
 	rm -f ${OBJS}
-fclean: clear
+fclean: clean
 	rm -f ${NAME}
 re: fclean all
