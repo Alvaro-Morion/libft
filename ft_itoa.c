@@ -6,7 +6,7 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:34:29 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 10:58:25 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 17:50:30 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_itoa(int n)
 
 	len = ft_getlen(n);
 	str = malloc(sizeof(char) * (len + 2));
+	if (!str)
+		return (NULL);
 	str[len + 1] = 0;
 	if (n < 0)
 	{

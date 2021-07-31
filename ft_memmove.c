@@ -6,7 +6,7 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:07:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 11:04:49 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 15:58:19 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	aux = src;
 	dest_c = dest;
-	i = 0;
-	while (i < n)
+	if (src < dest)
+		while (n--)
+			dest_c[n] = aux[n];
+	else if (dest < src)
 	{
-		dest_c[i] = aux[i];
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			dest_c[i] = aux[i];
+			i++;
+		}
 	}
 	return (dest);
 }

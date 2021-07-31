@@ -6,7 +6,7 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 09:58:58 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 11:32:35 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 17:46:18 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,10 @@ static int	ft_strlen_mod(char const *s)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static void	wstr(char *str, char const *s1, int i, int size)
 {
-	int		i;
-	int		size;
-	int		n;
-	char	*str;
+	int	n;
 
-	size = ft_strlen_mod(s1);
-	i = 0;
-	while (ft_isinset(set, s1[size - 1]))
-		size--;
-	while (ft_isinset(set, s1[i]))
-	{
-		size--;
-		i++;
-	}
-	str = malloc(sizeof(char) * (size + 1));
 	n = 0;
 	while (n < size)
 	{
@@ -60,5 +47,28 @@ char	*ft_strtrim(char const *s1, char const *set)
 		n++;
 	}
 	str[n] = '\0';
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		size;
+	char	*str;
+
+	size = ft_strlen_mod(s1);
+	i = 0;
+	while (ft_isinset(set, s1[size - 1]) && size)
+		size--;
+	while (ft_isinset(set, s1[i]))
+	{
+		size--;
+		i++;
+	}
+	if (size <= 0)
+		size = 0;
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (0);
+	wstr(str, s1, i, size);
 	return (str);
 }
