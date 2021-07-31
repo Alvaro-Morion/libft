@@ -6,27 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:30:13 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 10:50:10 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:58:50 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	*ft_bzero(void *s, size_t n)
-{
-	char	*str;
-	size_t	i;
-
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	s = str;
-	return (s);
-}
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

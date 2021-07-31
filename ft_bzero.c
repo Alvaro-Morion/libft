@@ -6,13 +6,13 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:18:37 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 10:49:00 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 12:01:32 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
 	size_t	i;
@@ -25,5 +25,4 @@ void	*ft_bzero(void *s, size_t n)
 		i++;
 	}
 	s = str;
-	return (s);
 }
