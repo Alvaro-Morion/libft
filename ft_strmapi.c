@@ -6,11 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 09:14:58 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 09:25:09 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:25:48 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 static size_t	ft_strlen_mod(const char *s)
 {

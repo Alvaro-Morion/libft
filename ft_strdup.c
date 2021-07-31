@@ -6,11 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:41:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:17:15 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 char	*strdup(const char *s)
 {

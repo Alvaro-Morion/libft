@@ -6,11 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:07:41 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:08:54 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:04:49 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

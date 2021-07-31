@@ -6,11 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:34:29 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 18:41:39 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 10:58:25 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 static int	ft_getlen(int n)
 {

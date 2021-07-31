@@ -6,9 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 09:48:31 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 09:55:41 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:31:13 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_strlen_mod(const char *s)
 {

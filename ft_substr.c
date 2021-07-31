@@ -6,27 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 10:08:30 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 10:15:49 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:34:48 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-
-static void	*ft_bzero(void *s, size_t n)
-{
-	char	*str;
-	size_t	i;
-
-	str = s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	s = str;
-	return (s);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

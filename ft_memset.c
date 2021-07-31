@@ -6,9 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:09:28 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:10:35 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:06:20 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

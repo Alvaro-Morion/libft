@@ -6,11 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:30:13 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 18:32:31 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 10:50:10 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 static void	*ft_bzero(void *s, size_t n)
 {

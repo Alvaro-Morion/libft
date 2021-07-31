@@ -6,11 +6,11 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:45:13 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/30 19:52:53 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/07/31 11:20:17 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
 
 static int	ft_size(char const *s1, char const *s2)
 {
