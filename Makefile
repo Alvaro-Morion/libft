@@ -6,7 +6,7 @@
 #    By: amorion- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/31 12:05:34 by amorion-          #+#    #+#              #
-#    Updated: 2021/07/31 12:23:39 by amorion-         ###   ########.fr        #
+#    Updated: 2021/08/02 12:53:15 by amorion-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ OBJS = ${SRCS:.c=.o}
 
 NAME = libft.a
 
-${NAME}: all
-
 .c.o:
 	gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
 
-all: ${OBJS}
+all:	${NAME}
+
+${NAME}: ${OBJS}
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}
 clean:
@@ -29,3 +29,5 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 re: fclean all
+
+.PHONY: re clean fclean all
