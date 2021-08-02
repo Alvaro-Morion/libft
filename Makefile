@@ -19,7 +19,7 @@ NAME = libft.a
 ${NAME}: all
 
 .c.o:
-	gcc -Wall -Werror -Wextra -I libft.h -c $< -o ${<:.c=.o}
+	gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
 
 all: ${OBJS}
 	ar rc ${NAME} ${OBJS}
