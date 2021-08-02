@@ -6,13 +6,13 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:08:45 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 10:47:26 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/08/02 13:29:20 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	n;
 	int	s;
