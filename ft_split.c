@@ -6,22 +6,22 @@
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:17:01 by amorion-          #+#    #+#             */
-/*   Updated: 2021/07/31 11:14:31 by amorion-         ###   ########.fr       */
+/*   Updated: 2021/08/03 11:23:44 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include<stdio.h>
 static int	ft_nword(char const *s, char c)
 {
 	int	i;
 	int	n;
 
-	i = 0;
-	n = 1;
-	while (s[i])
+	i = 1;
+	n = 0;
+	while (s[i - 1])
 	{
-		if (s[i] == c)
+		if (s[i - 1] != c && (s[i] == '\0' || s[i] == c))
 			n++;
 		i++;
 	}
@@ -50,7 +50,7 @@ static void	ft_splitwrd(char **tab, char *s2, char const *s, char c)
 	{
 		if (s2[j] != c)
 		{
-			tab[i] = malloc(sizeof (char) * (ft_wrdlen(&s2[j], c)));
+			tab[i] = malloc(sizeof (char) * (ft_wrdlen(&s2[j], c) + 1));
 			wlen = 0;
 			while (s2[j] && s2[j] != c)
 			{
@@ -58,11 +58,13 @@ static void	ft_splitwrd(char **tab, char *s2, char const *s, char c)
 				wlen++;
 				j++;
 			}
+			tab[i][wlen] = '\0';
 			i++;
 		}
-		j++;
+		else
+			j++;
 	}
-	tab[i] = 0;
+	tab[i] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
