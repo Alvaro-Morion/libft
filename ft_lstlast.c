@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 17:38:26 by amorion-          #+#    #+#             */
-/*   Updated: 2021/08/02 17:46:39 by amorion-         ###   ########.fr       */
+/*   Created: 2021/08/03 12:11:21 by amorion-          #+#    #+#             */
+/*   Updated: 2021/08/03 12:22:26 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-
+	while (lst->next)
+		lst = lst->next;
+	return(lst);
 }
