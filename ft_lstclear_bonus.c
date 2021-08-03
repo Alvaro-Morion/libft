@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 12:11:21 by amorion-          #+#    #+#             */
-/*   Updated: 2021/08/03 12:22:26 by amorion-         ###   ########.fr       */
+/*   Created: 2021/08/03 14:39:18 by amorion-          #+#    #+#             */
+/*   Updated: 2021/08/03 15:43:59 by amorion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstlast(t_list *lst)
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	while (lst->next)
-		lst = lst->next;
-	return(lst);
+	t_list	*ptr;
+
+	while (*lst)
+	{
+		ptr = *lst;
+		del(ptr->content);
+		*lst = ptr->next;
+		free(ptr);
+	}
 }
