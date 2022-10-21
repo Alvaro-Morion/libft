@@ -21,21 +21,24 @@ BOBJS = ${BSRCS:.c=.o} ${OBJS}
 NAME = libft.a
 
 .c.o:
-	gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
+	@gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
 
 all:	${NAME}
 
 ${NAME}: ${OBJS}
-	ar rc ${NAME} ${OBJS}
-	ranlib ${NAME}
+	@ar rc ${NAME} ${OBJS}
+	@ranlib ${NAME}
+	@echo ${NAME} compiled
 
 bonus: ${BOBJS}
-	ar rc ${NAME} ${BOBJS}
-	ranlib ${NAME}
+	@ar rc ${NAME} ${BOBJS}
+	@ranlib ${NAME}
+	@echo ${NAME} compiled
 clean: 
-	rm -f ${OBJS} ${BOBJS}
+	@rm -f ${OBJS} ${BOBJS}
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
+	@echo ${NAME} deleted
 re: fclean all
 
 .PHONY: re clean fclean all bonus
